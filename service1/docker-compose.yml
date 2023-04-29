@@ -1,0 +1,15 @@
+version: "3"
+services:
+  service-1:
+    build: .
+    restart: always
+    container_name: service-1
+    ports:
+      - "8080:8080"
+
+    networks:
+      - local_network
+
+networks:
+  local_network:
+    driver: bridge

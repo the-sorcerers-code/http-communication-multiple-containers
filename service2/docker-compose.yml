@@ -1,0 +1,15 @@
+version: "3"
+services:
+  service-2:
+    build: .
+    restart: always
+    container_name: service-2
+    ports:
+      - "8085:8085"
+
+    networks:
+      - service1_local_network
+
+networks:
+  service1_local_network:
+    external: true
